@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Accure Codes — AI Innovation</title>
-<meta name="google-site-verification" content="l0_xVmSkW9WtwDeP8lbxS9yP-mxCWkEYZdy3RUPZWYw" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -289,6 +288,54 @@
     max-width: 60ch;
   }
 
+  /* ---- BOARD ---- */
+  .board-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  @media (max-width: 780px) {
+    .board-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 520px) {
+    .board-grid { grid-template-columns: 1fr; }
+  }
+  .board-card {
+    text-align: left;
+  }
+  .board-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    background: var(--ink-raised);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .board-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .board-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .board-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--amber);
+  }
+
   /* ---- CTA / FOOTER ---- */
   footer { padding: 72px 0 40px; }
   .cta-block {
@@ -440,13 +487,29 @@
   </div>
 </section>
 
+<section id="board">
+  <div class="wrap">
+    <div class="section-label">Board of Directors</div>
+    <h2>The people guiding Accure Codes.</h2>
+    <div class="board-grid">
+      <div class="board-card">
+        <div class="board-photo">
+          <img src="eata-sukender.jpg" alt="Eata Sukender">
+        </div>
+        <div class="board-name">Eata Sukender</div>
+        <div class="board-title">Co-Founder</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer id="contact">
   <div class="wrap">
     <div class="cta-block">
       <div class="section-label">Get in touch</div>
       <h2>Have a process worth automating?</h2>
       <div class="btn-row">
-        <a href="mailto:kyashwanthreddy01@gmail.com" class="btn-primary">kyashwanthreddy01@gmail.com</a>
+        <a href="mailto:hello@accurecodes.com" class="btn-primary">hello@accurecodes.com</a>
       </div>
     </div>
     <div class="footer-bottom">
