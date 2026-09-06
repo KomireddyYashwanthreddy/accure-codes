@@ -3,513 +3,165 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="RINl5-yFjxErKDVUImI-b7vTGGB7MLNM02xpwkJN8F0" />
-<title>Accure Codes — AI Innovation</title>
+<title>Accure Codes — AI-Powered Medical Coding</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --ink: #0D1117;
-    --ink-raised: #131B24;
-    --line: #1F2733;
-    --paper: #E8ECEF;
-    --muted: #8B96A5;
-    --amber: #F5A623;
-    --amber-dim: #7A5518;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background: var(--ink);
-    color: var(--paper);
-    font-family: 'Space Grotesk', sans-serif;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .mono {
-    font-family: 'IBM Plex Mono', monospace;
-  }
-
-  a { color: inherit; text-decoration: none; }
-
-  .wrap {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 0 32px;
-  }
-
-  /* ---- NAV ---- */
-  nav {
-    border-bottom: 1px solid var(--line);
-    position: sticky;
-    top: 0;
-    background: rgba(13,17,23,0.92);
-    backdrop-filter: blur(6px);
-    z-index: 10;
-  }
-  nav .wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 68px;
-  }
-  .logo {
-    font-weight: 700;
-    font-size: 1.15rem;
-    letter-spacing: -0.01em;
-  }
-  .logo span { color: var(--amber); }
-  nav .links {
-    display: flex;
-    gap: 28px;
-    font-size: 0.95rem;
-    color: var(--muted);
-  }
-  nav .links a:hover { color: var(--paper); }
-  .nav-cta {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.85rem;
-    padding: 8px 16px;
-    border: 1px solid var(--amber);
-    color: var(--amber);
-    border-radius: 3px;
-  }
-  .nav-cta:hover { background: var(--amber); color: var(--ink); }
-
-  @media (max-width: 700px) {
-    nav .links { display: none; }
-  }
-
-  /* ---- HERO ---- */
-  header.hero {
-    padding: 96px 0 80px;
-    border-bottom: 1px solid var(--line);
-  }
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 56px;
-    align-items: center;
-  }
-  @media (max-width: 860px) {
-    .hero-grid { grid-template-columns: 1fr; }
-  }
-
-  .kicker {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.85rem;
-    color: var(--amber);
-    margin-bottom: 20px;
-  }
-
-  h1 {
-    font-size: clamp(2.2rem, 5vw, 3.4rem);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    line-height: 1.08;
-    margin-bottom: 24px;
-    max-width: 15ch;
-  }
-
-  .hero-sub {
-    color: var(--muted);
-    font-size: 1.1rem;
-    max-width: 46ch;
-    margin-bottom: 32px;
-  }
-
-  .btn-row { display: flex; gap: 14px; flex-wrap: wrap; }
-
-  .btn-primary {
-    background: var(--amber);
-    color: var(--ink);
-    font-weight: 600;
-    padding: 13px 24px;
-    border-radius: 4px;
-    font-size: 0.95rem;
-  }
-  .btn-primary:hover { background: #ffb84d; }
-
-  .btn-ghost {
-    border: 1px solid var(--line);
-    padding: 13px 24px;
-    border-radius: 4px;
-    font-size: 0.95rem;
-    color: var(--paper);
-  }
-  .btn-ghost:hover { border-color: var(--muted); }
-
-  /* ---- TERMINAL VISUAL ---- */
-  .terminal {
-    background: var(--ink-raised);
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    overflow: hidden;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.82rem;
-  }
-  .terminal-bar {
-    display: flex;
-    gap: 6px;
-    padding: 12px 14px;
-    border-bottom: 1px solid var(--line);
-  }
-  .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--line); }
-  .terminal-body { padding: 18px 20px; color: #C3D0DB; }
-  .terminal-body .comment { color: var(--muted); }
-  .terminal-body .key { color: var(--amber); }
-  .terminal-body .string { color: #9ED3C4; }
-  .terminal-line { white-space: pre; margin-bottom: 4px; }
-  .cursor {
-    display: inline-block;
-    width: 7px; height: 14px;
-    background: var(--amber);
-    vertical-align: middle;
-    animation: blink 1.1s steps(1) infinite;
-  }
-  @keyframes blink { 50% { opacity: 0; } }
-
-  /* ---- SECTIONS ---- */
-  section { padding: 88px 0; border-bottom: 1px solid var(--line); }
-
-  .section-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.8rem;
-    color: var(--amber);
-    margin-bottom: 12px;
-  }
-
-  h2 {
-    font-size: clamp(1.7rem, 3.2vw, 2.3rem);
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    max-width: 22ch;
-    margin-bottom: 44px;
-  }
-
-  .grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-  }
-  @media (max-width: 780px) {
-    .grid-3 { grid-template-columns: 1fr; }
-  }
-  .cell {
-    background: var(--ink);
-    padding: 32px 28px;
-  }
-  .cell .idx {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--muted);
-    margin-bottom: 18px;
-  }
-  .cell h3 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  .cell p {
-    color: var(--muted);
-    font-size: 0.95rem;
-  }
-
-  /* ---- PROCESS (real sequence, numbered) ---- */
-  .process {
-    display: flex;
-    flex-direction: column;
-  }
-  .step {
-    display: grid;
-    grid-template-columns: 64px 1fr;
-    gap: 24px;
-    padding: 26px 0;
-    border-top: 1px solid var(--line);
-  }
-  .step:last-child { border-bottom: 1px solid var(--line); }
-  .step .num {
-    font-family: 'IBM Plex Mono', monospace;
-    color: var(--amber);
-    font-size: 1.1rem;
-    padding-top: 2px;
-  }
-  .step h4 { font-size: 1.05rem; margin-bottom: 6px; font-weight: 600; }
-  .step p { color: var(--muted); font-size: 0.94rem; max-width: 58ch; }
-
-  /* ---- FOUNDER ---- */
-  .founder-grid {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 44px;
-    align-items: start;
-  }
-  @media (max-width: 700px) {
-    .founder-grid { grid-template-columns: 1fr; }
-  }
-  .founder-photo {
-    width: 200px;
-    height: 200px;
-    border-radius: 8px;
-    border: 1px solid var(--line);
-    background: var(--ink-raised);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--muted);
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.75rem;
-    text-align: center;
-    overflow: hidden;
-  }
-  .founder-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .founder-name {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
-  .founder-title {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.85rem;
-    color: var(--amber);
-    margin-bottom: 18px;
-  }
-  .founder-bio {
-    color: var(--muted);
-    font-size: 0.98rem;
-    max-width: 60ch;
-  }
-
-  /* ---- BOARD ---- */
-  .board-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-  }
-  @media (max-width: 780px) {
-    .board-grid { grid-template-columns: 1fr 1fr; }
-  }
-  @media (max-width: 520px) {
-    .board-grid { grid-template-columns: 1fr; }
-  }
-  .board-card {
-    text-align: left;
-  }
-  .board-photo {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    border-radius: 8px;
-    border: 1px solid var(--line);
-    background: var(--ink-raised);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--muted);
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.75rem;
-    text-align: center;
-    overflow: hidden;
-    margin-bottom: 16px;
-  }
-  .board-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .board-name {
-    font-size: 1.05rem;
-    font-weight: 600;
-    margin-bottom: 2px;
-  }
-  .board-title {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.8rem;
-    color: var(--amber);
-  }
-
-  /* ---- CTA / FOOTER ---- */
-  footer { padding: 72px 0 40px; }
-  .cta-block {
-    text-align: left;
-    margin-bottom: 64px;
-  }
-  .cta-block h2 { margin-bottom: 20px; }
-  .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 28px;
-    border-top: 1px solid var(--line);
-    color: var(--muted);
-    font-size: 0.85rem;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  .footer-bottom a:hover { color: var(--paper); }
-
-  :focus-visible {
-    outline: 2px solid var(--amber);
-    outline-offset: 2px;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .cursor { animation: none; }
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <nav>
   <div class="wrap">
-    <div class="logo">Accure<span>Codes</span></div>
+    <a href="index.html" class="logo">Accure<span>Codes</span></a>
     <div class="links">
-      <a href="#work">What we build</a>
-      <a href="#process">How we work</a>
-      <a href="#contact">Contact</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </div>
-    <a href="#contact" class="nav-cta">Start a project</a>
+    <a href="contact.html" class="nav-cta">Talk to us</a>
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="kicker">// ai systems, built precisely</div>
-      <h1>AI that ships, not just demos.</h1>
-      <p class="hero-sub">Accure Codes designs and builds applied AI systems for businesses — from automation pipelines to custom models — engineered to run correctly in production, not just in a slide deck.</p>
+      <div class="kicker">// ai + certified coders</div>
+      <h1>Medical coding accuracy, at AI speed.</h1>
+      <p class="hero-sub">Accure Codes pairs AI automation with experienced, specialized medical coders — covering IPDRG, E/M, and HCC coding — so your claims go out accurate, compliant, and fast.</p>
       <div class="btn-row">
-        <a href="#contact" class="btn-primary">Start a project</a>
-        <a href="#work" class="btn-ghost">See what we build</a>
+        <a href="contact.html" class="btn-primary">Talk to us</a>
+        <a href="services.html" class="btn-ghost">See our specialties</a>
+      </div>
+      <div class="badge-row">
+        <span class="badge">IPDRG</span>
+        <span class="badge">E/M</span>
+        <span class="badge">HCC</span>
+        <span class="badge">AI + Human Review</span>
       </div>
     </div>
-    <div class="terminal">
-      <div class="terminal-bar">
-        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
-      </div>
-      <div class="terminal-body">
-        <div class="terminal-line"><span class="comment"># deploying pipeline</span></div>
-        <div class="terminal-line"><span class="key">$</span> accure deploy --env production</div>
-        <div class="terminal-line"><span class="comment">validating model accuracy...</span></div>
-        <div class="terminal-line">accuracy: <span class="string">98.4%</span></div>
-        <div class="terminal-line">latency: <span class="string">142ms</span></div>
-        <div class="terminal-line"><span class="comment">status: healthy</span></div>
-        <div class="terminal-line">deployed to prod <span class="cursor"></span></div>
-      </div>
+    <div class="hero-visual">
+      <svg viewBox="0 0 380 340" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="380" height="340" rx="12" fill="#131B24" stroke="#1F2733"/>
+        <!-- pulse line -->
+        <polyline points="20,180 70,180 90,120 120,240 150,80 180,180 360,180"
+          fill="none" stroke="#F5A623" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+        <!-- coding tags floating -->
+        <g font-family="IBM Plex Mono, monospace" font-size="13">
+          <rect x="30" y="40" width="70" height="28" rx="4" fill="#0D1117" stroke="#2A3644"/>
+          <text x="65" y="58" fill="#9ED3C4" text-anchor="middle">IPDRG</text>
+
+          <rect x="150" y="30" width="60" height="28" rx="4" fill="#0D1117" stroke="#2A3644"/>
+          <text x="180" y="48" fill="#9ED3C4" text-anchor="middle">E/M</text>
+
+          <rect x="250" y="50" width="60" height="28" rx="4" fill="#0D1117" stroke="#2A3644"/>
+          <text x="280" y="68" fill="#9ED3C4" text-anchor="middle">HCC</text>
+
+          <rect x="140" y="250" width="120" height="28" rx="4" fill="#0D1117" stroke="#2A3644"/>
+          <text x="200" y="268" fill="#F5A623" text-anchor="middle">AI-reviewed ✓</text>
+        </g>
+      </svg>
     </div>
   </div>
 </header>
 
-<section id="work">
+<section id="overview">
   <div class="wrap">
-    <div class="section-label">What we build</div>
-    <h2>Three ways we plug AI into a real business.</h2>
+    <div class="section-label">What we do</div>
+    <h2>Three specialties. One accurate pipeline.</h2>
     <div class="grid-3">
       <div class="cell">
-        <div class="idx">01</div>
-        <h3>Workflow automation</h3>
-        <p>Replacing manual, repetitive processes with AI-driven pipelines — document processing, data entry, reporting — so your team spends time on decisions, not data wrangling.</p>
+        <div class="icon-box">
+          <svg viewBox="0 0 40 40" width="34" height="34"><rect x="6" y="4" width="28" height="32" rx="3" fill="none" stroke="#F5A623" stroke-width="2"/><line x1="12" y1="13" x2="28" y2="13" stroke="#F5A623" stroke-width="2"/><line x1="12" y1="20" x2="28" y2="20" stroke="#F5A623" stroke-width="2"/><line x1="12" y1="27" x2="22" y2="27" stroke="#F5A623" stroke-width="2"/></svg>
+        </div>
+        <h3>IPDRG Coding</h3>
+        <p>Inpatient DRG assignment reviewed for accuracy, so reimbursement reflects the actual complexity and care delivered.</p>
       </div>
       <div class="cell">
-        <div class="idx">02</div>
-        <h3>Custom AI models</h3>
-        <p>Purpose-built models trained on your data for forecasting, classification, or recommendation — not a generic off-the-shelf tool bent to fit your problem.</p>
+        <div class="icon-box">
+          <svg viewBox="0 0 40 40" width="34" height="34"><circle cx="20" cy="20" r="15" fill="none" stroke="#F5A623" stroke-width="2"/><path d="M20 12 v8 l6 4" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>E/M Coding</h3>
+        <p>Evaluation & Management coding for physician visits, calibrated to documentation level and encounter complexity.</p>
       </div>
       <div class="cell">
-        <div class="idx">03</div>
-        <h3>AI product development</h3>
-        <p>End-to-end build of AI-powered features or products, from prototype to a production system your users actually rely on.</p>
+        <div class="icon-box">
+          <svg viewBox="0 0 40 40" width="34" height="34"><path d="M20 4 L34 10 V20 C34 29 28 35 20 37 C12 35 6 29 6 20 V10 Z" fill="none" stroke="#F5A623" stroke-width="2"/><path d="M14 20 l4 4 8-8" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>HCC Coding</h3>
+        <p>Risk-adjustment coding for value-based care, capturing chronic conditions accurately for correct risk scores.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="process">
+<section id="how">
   <div class="wrap">
-    <div class="section-label">How we work</div>
-    <h2>A short, direct path from problem to production.</h2>
+    <div class="section-label">How it works</div>
+    <h2>AI does the first pass. Certified coders make it final.</h2>
     <div class="process">
       <div class="step">
         <div class="num">01</div>
         <div>
-          <h4>Scope the real problem</h4>
-          <p>We start with what's actually slowing your business down, not with the tech. A clear problem gives us a clear target.</p>
+          <h4>AI-assisted first read</h4>
+          <p>Our AI system reads the clinical documentation and proposes codes, flagging ambiguous or high-risk areas for human attention.</p>
         </div>
       </div>
       <div class="step">
         <div class="num">02</div>
         <div>
-          <h4>Build a working prototype</h4>
-          <p>You see and test something functional early, on real data — not a mockup or a slide.</p>
+          <h4>Certified coder review</h4>
+          <p>Experienced coders specialized in IPDRG, E/M, or HCC verify every AI-suggested code against documentation and guidelines.</p>
         </div>
       </div>
       <div class="step">
         <div class="num">03</div>
         <div>
-          <h4>Harden and deploy</h4>
-          <p>We handle the unglamorous parts — reliability, monitoring, edge cases — so the system holds up outside a demo.</p>
+          <h4>Quality audit</h4>
+          <p>A second-layer audit catches edge cases before anything is finalized — accuracy over speed, always.</p>
         </div>
       </div>
       <div class="step">
         <div class="num">04</div>
         <div>
-          <h4>Support after launch</h4>
-          <p>AI systems drift as data changes. We stay on to monitor performance and retrain when needed.</p>
+          <h4>Delivered to you</h4>
+          <p>Coded claims delivered ready for submission, with a clear audit trail behind every code.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="founder">
+<section id="why">
   <div class="wrap">
-    <div class="section-label">Who's behind it</div>
-    <h2>The person building this.</h2>
-    <div class="founder-grid">
-      <div class="founder-photo">
-        <img src="komireddy-yashwanth-reddy.jpg" alt="Komireddy Yashwanth Reddy">
+    <div class="section-label">Why Accure Codes</div>
+    <h2>Built by people who understand both AI and coding compliance.</h2>
+    <div class="grid-3">
+      <div class="cell">
+        <div class="idx">01</div>
+        <h3>Specialized, not generalist</h3>
+        <p>Our coders focus specifically on IPDRG, E/M, and HCC — not a broad, shallow mix of every coding type.</p>
       </div>
-      <div>
-        <div class="founder-name">Komireddy Yashwanth Reddy</div>
-        <div class="founder-title">CEO &amp; Founder</div>
-        <p class="founder-bio">Founder of Accure Codes, building applied AI systems for businesses that need automation and AI to actually work in production — not just in a demo.</p>
+      <div class="cell">
+        <div class="idx">02</div>
+        <h3>AI as a tool, not a replacement</h3>
+        <p>Automation speeds up the first pass. A certified human always makes the final call.</p>
+      </div>
+      <div class="cell">
+        <div class="idx">03</div>
+        <h3>Built for compliance</h3>
+        <p>Every code is traceable back to documentation — audit-ready by design, not as an afterthought.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="board">
-  <div class="wrap">
-    <div class="section-label">Board of Directors</div>
-    <h2>The people guiding Accure Codes.</h2>
-    <div class="board-grid">
-      <div class="board-card">
-        <div class="board-photo">
-          <img src="eata-sukender.jpg" alt="Eata Sukender">
-        </div>
-        <div class="board-name">Eata Sukender</div>
-        <div class="board-title">Co-Founder</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer id="contact">
+<footer id="contact-cta">
   <div class="wrap">
     <div class="cta-block">
       <div class="section-label">Get in touch</div>
-      <h2>Have a process worth automating?</h2>
+      <h2>Have coding volume that needs accuracy at scale?</h2>
       <div class="btn-row">
-        <a href="mailto:kyashwanthreddy01@gmail.com" class="btn-primary">kyashwanthreddy01@gmail.com</a>
+        <a href="contact.html" class="btn-primary">Talk to us</a>
       </div>
     </div>
     <div class="footer-bottom">
