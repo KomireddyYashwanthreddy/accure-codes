@@ -50,7 +50,14 @@ nav .links a:hover { color: var(--paper); }
   border-radius: 3px;
 }
 .nav-cta:hover { background: var(--amber); color: var(--ink); }
-@media (max-width: 700px) { nav .links { display: none; } }
+@media (max-width: 700px) {
+  nav .wrap { height: auto; padding: 14px 20px; flex-wrap: wrap; row-gap: 10px; }
+  nav .links { gap: 16px; font-size: 0.85rem; }
+  .nav-cta { display: none; }
+}
+@media (max-width: 420px) {
+  nav .links { gap: 10px; font-size: 0.78rem; }
+}
 
 /* ---- HERO ---- */
 header.hero { padding: 88px 0 72px; border-bottom: 1px solid var(--line); }
@@ -120,6 +127,8 @@ h2 {
 }
 
 /* ---- PROCESS ---- */
+.pipeline-visual { margin-bottom: 20px; overflow-x: auto; }
+.pipeline-visual svg { width: 100%; min-width: 600px; height: auto; }
 .process { display: flex; flex-direction: column; }
 .step { display: grid; grid-template-columns: 64px 1fr; gap: 24px; padding: 24px 0; border-top: 1px solid var(--line); }
 .step:last-child { border-bottom: 1px solid var(--line); }
